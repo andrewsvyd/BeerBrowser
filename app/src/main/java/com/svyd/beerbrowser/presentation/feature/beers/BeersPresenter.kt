@@ -3,13 +3,13 @@ package com.svyd.beerbrowser.presentation.feature.beers
 import android.os.Bundle
 import com.svyd.beerbrowser.data.repository.beers.model.Beer
 import com.svyd.beerbrowser.data.repository.beers.model.BeersRequest
-import com.svyd.beerbrowser.domain.interactor.beer.BeersInteractor
+import com.svyd.beerbrowser.domain.interactor.base.Interactor
 import com.svyd.beerbrowser.presentation.base.BaseObserver
 import com.svyd.beerbrowser.presentation.base.BasePresenter
 import com.svyd.beerbrowser.presentation.exception.AbstractExceptionDelegate
 
 class BeersPresenter constructor(
-    private val interactor: BeersInteractor,
+    private val interactor: Interactor<List<Beer>, BeersRequest>,
     errorHandler: AbstractExceptionDelegate<*>
 ) : BasePresenter<BeersContract.View>(errorHandler), BeersContract.Presenter {
 

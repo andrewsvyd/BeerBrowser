@@ -3,6 +3,7 @@ package com.svyd.beerbrowser.presentation.feature.beers
 import androidx.recyclerview.widget.RecyclerView
 import com.svyd.beerbrowser.R
 import com.svyd.beerbrowser.data.repository.beers.model.Beer
+import com.svyd.beerbrowser.presentation.application.BeersApplication
 import com.svyd.beerbrowser.presentation.base.BaseActivity
 import com.svyd.beerbrowser.presentation.base.ViewPresenterContract
 
@@ -22,7 +23,7 @@ class BeersActivity : BaseActivity(), BeersContract.View {
     }
 
     override fun initializePresenter() {
-        presenter = BeersPresenterProvider().provideBeersPresenter()
+        presenter = BeersPresenterProvider(BeersApplication.instance).providePresenter()
         getPresenter().initialize(this)
     }
 
