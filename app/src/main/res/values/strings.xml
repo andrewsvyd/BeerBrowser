@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BeerBrowser</string>
+    <string name="content_description_beer_picture">Beer picture</string>
 </resources>

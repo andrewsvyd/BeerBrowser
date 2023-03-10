@@ -10,10 +10,10 @@ import io.reactivex.schedulers.Schedulers
 abstract class Interactor<T, Params> internal constructor() {
     private val disposables: CompositeDisposable = CompositeDisposable()
 
-    abstract fun buildInteractorObservable(params: Params): Observable<T>
+    abstract fun buildObservable(params: Params): Observable<T>
 
     fun execute(observer: DisposableObserver<T>, params: Params) {
-        val observable = buildInteractorObservable(params)
+        val observable = buildObservable(params)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
         addDisposable(observable.subscribeWith(observer))

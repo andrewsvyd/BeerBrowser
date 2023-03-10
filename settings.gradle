@@ -28,6 +28,8 @@ dependencyResolutionManagement {
             library('rxjava', 'io.reactivex.rxjava2:rxjava:2.2.21')
             library('rxandroid', 'io.reactivex.rxjava2:rxandroid:2.1.1')
             bundle('rx', ['rxjava', 'rxandroid'])
+            //glide
+            library('glide', 'com.github.bumptech.glide:glide:4.15.0')
         }
     }
 }

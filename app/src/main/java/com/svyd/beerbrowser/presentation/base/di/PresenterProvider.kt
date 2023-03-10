@@ -2,7 +2,7 @@ package com.svyd.beerbrowser.presentation.base.di
 
 import com.svyd.beerbrowser.presentation.exception.*
 
-class PresenterProvider {
+open class PresenterProvider {
     protected fun provideExceptionDelegate(): AbstractExceptionDelegate<*> {
         val unknownExceptionDelegate = UnknownExceptionDelegate()
         val ioExceptionDelegate = IOExceptionDelegate(unknownExceptionDelegate)

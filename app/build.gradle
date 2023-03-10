@@ -44,4 +44,7 @@ dependencies {
 
     //rx
     implementation libs.bundles.rx
+
+    //glide
+    implementation libs.glide
 }
