@@ -5,11 +5,30 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+    }
+    versionCatalogs {
+        libs {
+            version('retrofit', '2.9.0')
+            //android
+            library('appcompat', 'androidx.appcompat:appcompat:1.6.1')
+            library('material', 'com.google.android.material:material:1.8.0')
+            //networking
+            library('okhttp','com.squareup.okhttp3:okhttp:4.10.0')
+            library('retrofit', 'com.squareup.retrofit2', 'retrofit').versionRef('retrofit')
+            library('retrofit.adapter.rx', 'com.squareup.retrofit2', 'adapter-rxjava').versionRef('retrofit')
+            library('retrofit.converter.gson', 'com.squareup.retrofit2', 'converter-gson').versionRef('retrofit')
+            bundle('retrofit', ['retrofit', 'retrofit.adapter.rx', 'retrofit.converter.gson'])
+            //rx
+            library('rxjava', 'io.reactivex.rxjava2:rxjava:2.2.21')
+            library('rxandroid', 'io.reactivex.rxjava2:rxandroid:2.1.1')
+            bundle('rx', ['rxjava', 'rxandroid'])
+        }
     }
 }
 rootProject.name = "BeerBrowser"
