@@ -21,7 +21,7 @@ dependencyResolutionManagement {
             //networking
             library('okhttp','com.squareup.okhttp3:okhttp:4.10.0')
             library('retrofit', 'com.squareup.retrofit2', 'retrofit').versionRef('retrofit')
-            library('retrofit.adapter.rx', 'com.squareup.retrofit2', 'adapter-rxjava').versionRef('retrofit')
+            library('retrofit.adapter.rx', 'com.squareup.retrofit2', 'adapter-rxjava2').versionRef('retrofit')
             library('retrofit.converter.gson', 'com.squareup.retrofit2', 'converter-gson').versionRef('retrofit')
             bundle('retrofit', ['retrofit', 'retrofit.adapter.rx', 'retrofit.converter.gson'])
             //rx

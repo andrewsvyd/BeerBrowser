@@ -42,6 +42,8 @@ class BeersAdapter : RecyclerView.Adapter<BeersAdapter.BeerHolder>() {
             Glide.with(view)
                 .load(beer.image)
                 .into(image)
+            name.text  = beer.name
+            description.text  = beer.description
         }
     }
 }

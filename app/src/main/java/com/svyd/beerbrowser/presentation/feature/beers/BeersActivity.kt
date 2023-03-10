@@ -1,5 +1,6 @@
 package com.svyd.beerbrowser.presentation.feature.beers
 
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.svyd.beerbrowser.R
 import com.svyd.beerbrowser.data.repository.beers.model.Beer
@@ -18,13 +19,16 @@ class BeersActivity : BaseActivity(), BeersContract.View {
     override fun getPresenter(): ViewPresenterContract.Presenter<BeersContract.View> = presenter
 
     override fun initializeUi() {
+        val recycler = findViewById<RecyclerView>(R.id.beers_list)
         adapter = BeersAdapter()
-        findViewById<RecyclerView>(R.id.beers_list).adapter = adapter
+        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.adapter = adapter
     }
 
     override fun initializePresenter() {
         presenter = BeersPresenterProvider(BeersApplication.instance).providePresenter()
-        getPresenter().initialize(this)
+        presenter.initialize(this)
+        presenter.loadBeers()
     }
 
     override fun showBeers(beers: List<Beer>) {
